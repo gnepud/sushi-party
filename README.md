@@ -1,4 +1,1 @@
-padrino-boilerplate
-===================
-
-Padrino boilerplate
+sushi-party
