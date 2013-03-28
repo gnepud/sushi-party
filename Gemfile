@@ -13,7 +13,10 @@ gem 'bcrypt-ruby', :require => "bcrypt"
 gem 'sass'
 gem 'erubis', "~> 2.7.0"
 gem 'activerecord', :require => "active_record"
-gem 'sqlite3'
+
+group :development do
+  gem 'sqlite3'
+end
 
 # Test requirements
 
