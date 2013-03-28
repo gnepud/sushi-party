@@ -1,4 +1,5 @@
-class PadrinoBoilerplate < Padrino::Application
+class SushiParty < Padrino::Application
+  register WillPaginate::Sinatra
   use ActiveRecord::ConnectionAdapters::ConnectionManagement
   register Padrino::Rendering
   register Padrino::Mailer
@@ -59,7 +60,7 @@ class PadrinoBoilerplate < Padrino::Application
   end
 
   def self.email_to
-    'contact@sleede.com'
+    'sushiparty2011@gmail.com'
   end
 
   ##

@@ -18,7 +18,6 @@
   <link href="/favicon.ico" rel="icon" type="image/ico" />
 
   <%= stylesheet_link_tag 'application' %>
-  <%= stylesheet_link_tag 'print', :media => 'print' %>
   <%= yield_content :stylesheet %>
 
   <!--[if lt IE 9]>
@@ -28,7 +27,30 @@
 </head>
 <body class="<%= current_action %>">
 
-  <div id="main" class="container">
+  <div class="row">
+    <div class="large-4 columns">
+      <%= link_to image_tag('logo.png', id: 'logo'), '/' %>
+    </div>
+    <div class="large-4 columns">
+      <ul id="main-menu" class="inline-list">
+        <li><%= link_to "Acceuil", url_for(:pages_index) %></li>
+        <li>
+          <a href="javascript:void(0)">Menu</a>
+          <ul>
+            <li><%= link_to "Menu midi", url_for(:pages_menu_midi) %></li>
+            <li><%= link_to "Menu soir", url_for(:pages_menu_soir) %></li>
+          </ul>
+        </li>
+        <li><%= link_to "A la carte", url_for(:pages_plateaux) %></li>
+        <li><%= link_to "Livraison", url_for(:pages_livraison) %></li>
+      </ul>
+    </div>
+    <div class="large-3 columns right">
+      <%= link_to image_tag('livraison.png'), url_for(:pages_livraison) %>
+    </div>
+  </div>
+
+  <div id="main" class="row">
     <%= yield %>
   </div>
 

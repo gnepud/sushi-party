@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-PadrinoBoilerplate.helpers do
+SushiParty.helpers do
   def dom_id(object)
     "#{object.class.to_s.downcase}_#{object.id.to_s}"
   end

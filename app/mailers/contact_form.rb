@@ -35,11 +35,11 @@
 # and then all delivered mail will use these settings unless otherwise specified.
 #
 
-PadrinoBoilerplate.mailer :contact_form do
+SushiParty.mailer :contact_form do
 
   email :contact_email do |name, email, tel, message|
-    from 'contact@sleede.com'
-    to PadrinoBoilerplate.email_to
+    from 'sushiparty2011@gmail.com'
+    to SushiParty.email_to
     subject 'padrino-boilerplate-sleede.fr [Prise de contact]'
     locals :name => name, :email => email, :tel => tel, :message => message
     render 'contact_form/contact_email'

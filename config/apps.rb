@@ -27,10 +27,10 @@
 #
 Padrino.configure_apps do
   # enable :sessions
-  set :session_secret, '065a77129c9872c09b876111a912e4610c6d9c936bd1403e9f5587a5e4ff1eff'
+  set :session_secret, '8674c10e0b3e0337f2aee7ed403f3651082328f40c54b5a2c74b51c51ceaff14'
 end
 
 # Mounts the core application for this project
-Padrino.mount("PadrinoBoilerplate").to('/')
+Padrino.mount("SushiParty").to('/')
 
 Padrino.mount("Admin").to("/admin")

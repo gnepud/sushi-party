@@ -1,4 +1,5 @@
 class Admin < Padrino::Application
+  register WillPaginate::Sinatra
   use ActiveRecord::ConnectionAdapters::ConnectionManagement
   register Padrino::Rendering
   register Padrino::Mailer
@@ -43,6 +44,7 @@ class Admin < Padrino::Application
   end
 
   access_control.roles_for :admin do |role|
+    role.project_module :menus, '/menus'
     role.project_module :accounts, '/accounts'
   end
 end

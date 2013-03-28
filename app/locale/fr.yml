@@ -1,0 +1,117 @@
+fr:
+  # ******************************************* #
+  # ************** Will_paginate ************** #
+  # ******************************************* #
+  will_paginate:
+    next_label: Suivant
+    page_entries_info:
+      multi_page: ! '%{model} %{from} - %{to} sur %{count} au total'
+      multi_page_html: ! '%{model} <strong>%{from} - %{to}</strong> sur <strong>%{count}</strong>
+        au total'
+      single_page:
+        one: ! '%{count} %{model} affiché(e)'
+        other: ! '%{count} %{model} affiché(e)s'
+      single_page_html:
+        one: ! '%{count} %{model} affiché(e)'
+        other: ! '%{count} %{model} affiché(e)s'
+    page_gap: ! '&hellip;'
+    previous_label: Précédent
+
+
+  date:
+    formats:
+      # Use the strftime parameters for formats.
+      # When no format has been given, it uses default.
+      # You can provide other formats here if you like!
+      default: "%d-%m-%Y"
+      short: "%b %d"
+      long: "%d %B %Y"
+      only_day: "%e"
+
+    day_names: [Dimanche, Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi]
+    abbr_day_names: [Lun, Mar, Mer, Jeu, Ven, Sam, Dim]
+    month_names: [~, Janvier, Février, Mars, Avril, Mai, Juin, Juillet, Août, Septembre, Octobre, Novembre, Décembre]
+    abbr_month_names: [~, Jan, Fev, Mar, Avr, Mai, Jun, Jul, Aou, Sep, Oct, Nov, Dec]
+    order: 
+      - day
+      - month
+      - year
+
+  time:
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      short: "%d %b %H:%M"
+      long: "%d %B %Y %H:%M"
+    am: "am"
+    pm: "pm"
+
+  padrino:
+    admin:
+      save: Sauver
+      cancel: Annuler
+      list: Liste
+      edit: Éditer
+      new: Nouveau
+      show: Voir
+      delete: Supprimer
+      confirm: Êtes-vous certain ?
+      created_at: Créé le
+      all: Tous
+      profile: Profil
+      settings: Paramètres
+      logout: Déconnexion
+
+  models:
+    account:
+      name: Utilisateur
+      attributes:
+        name: Nom
+        password: Mot de passe
+        password_confirmation: Confirmation de mot de passe
+        role: Rôle
+
+    agent:
+      attributes:
+        name: Nom entreprise
+        tel: Tél
+        first_name: Prénom
+        last_name: Nom
+        mail: Email
+
+    address:
+      name: Adresse
+      attributes:
+        street: Rue
+        zip_code: Code postal
+        city: Ville
+
+    salon:
+      attributes:
+        name: Nom
+
+
+  activemodel: &activemodel
+    errors:
+      messages:
+        inclusion: "Votre saisie n'est pas incluse dans la liste"
+        exclusion: "Votre saisie est réservée"
+        invalid: "Votre saisie est invalide"
+        confirmation: "Votre saisie ne correspond pas à la confirmation"
+        accepted: "Votre saisie doit être acceptée"
+        empty: "Merci de compléter ce champ"
+        blank: "Merci de compléter ce champ"
+        too_long: "Votre saisie est trop longue. Le maximum est de %{count} caractères"
+        too_short: "Votre saisie est trop courte. Le minimum est de %{count} caractères"
+        wrong_length: "Votre saisie n'est pas de la bonne longueur (elle devrait être longue de %{count} caractères)"
+        taken: "Votre saisie n'est pas disponible"
+        not_a_number: "Votre saisie n'est pas un nombre"
+        greater_than: "Votre saisie doit être supérieure à %{count}"
+        greater_than_or_equal_to: "Votre saisie doit être supérieure ou égale à %{count}"
+        equal_to: "Votre saisie doit être égale à %{count}"
+        less_than: "Votre saisie doit être inférieure à %{count}"
+        less_than_or_equal_to: "Votre saisie doit être inférieure ou égale à %{count}"
+        odd: "Votre saisie doit être impaire"
+        even: "Votre saisie doit être paire"
+        record_invalid: "La validation a échoué: %{errors}"
+        content_type: "Ce format de fichier n'est pas pris en charge"
+  activerecord: *activemodel

@@ -6,6 +6,7 @@ PADRINO_ROOT = File.expand_path('../..', __FILE__) unless defined?(PADRINO_ROOT)
 require 'rubygems' unless defined?(Gem)
 require 'bundler/setup'
 Bundler.require(:default, PADRINO_ENV)
+  require 'carrierwave/orm/activerecord'
 
 ##
 # ## Enable devel logging
@@ -47,7 +48,7 @@ end
 # Add your after (RE)load hooks here
 #
 Padrino.after_load do
-  #require 'will_paginate/active_record'
+  require 'will_paginate/active_record'
 end
 
 Padrino.load!

@@ -26,3 +26,6 @@ else
 end
 
 shell.say ""
+
+MenuType.create(name: 'Menu midi')
+MenuType.create(name: 'Menu soir')

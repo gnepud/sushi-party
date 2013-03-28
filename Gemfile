@@ -28,7 +28,10 @@ group :production do
   gem 'rack-google-analytics'
 end
 
-#gem 'will_paginate'
+gem 'will_paginate'
+
+gem 'rmagick'
+gem 'carrierwave', :require => 'carrierwave'
 
 # Or Padrino Edge
 # gem 'padrino', :git => 'git://github.com/padrino/padrino-framework.git'

@@ -1,3 +1,98 @@
 /*
+ *= require normalize
  *= require foundation
  */
+
+[class*="column"] + [class*="column"]:last-child {
+  float: left;
+}
+
+a {
+  color: white;
+  &:hover {
+    color: red;
+  }
+}
+
+p{
+  color: #b1b1b1;
+}
+
+body {
+  background: url(/assets/bg.jpg);
+}
+
+.panel {
+  background: #000;
+  border-width: 0;
+  padding: 0.6em;
+  margin-bottom: 1.5em;
+  .menu-price {
+    color: #8b8b8b;
+    text-align: center;
+    font-size: 0.9em;
+  }
+}
+
+
+/* pagination */
+.pagination a,.pagination span{padding:2px 5px;margin-right:5px;display:block;float:left;border-style:solid;border-width:0px;}
+.pagination em.current{background:#CFCFCF;font-weight:bold;padding:2px 5px;margin-right:5px;display:block;float:left;border-style:solid;border-width:0px;}
+.pagination a{text-decoration:none;}
+.pagination span.disabled {color: #8b8b8b;}
+
+
+
+
+#logo {
+  margin: 1.4em 0;
+}
+
+#main-menu {
+  display: inline-block;
+  margin: 5em 0 0 0;
+
+  li {
+    float: left;
+    font-size: 1.0em;
+    padding: 1em 1.1em 1em 0;
+    margin-left: 0;
+  }
+  li ul /* Sous-listes */ {
+    position: absolute; /* Position absolue */
+    width: 100px; /* Largeur des sous-listes */
+    margin-left: 0;
+    list-style-type: none;
+    left: -999em;
+  }
+
+  li ul li {
+    padding: 0;
+  }
+
+  li:hover ul {
+    left: auto; /* Repositionnement normal */
+    min-height: 0; /* Corrige un bug */
+  }
+}
+
+#presentation {
+  h3 {
+    color: #b1b1b1;
+  }
+  width: 756px;
+  font-size: 14px;
+  font-family: Arial;
+  color: #b1b1b1;
+  margin: 1em auto;
+  line-height: 26px;
+  background: #221816;
+  padding: 1em;
+}
+
+.menu-title {
+  padding: 0.3em;
+  color: #8b8b8b;
+  text-align: center;
+  font-size: 1.2em;
+}
