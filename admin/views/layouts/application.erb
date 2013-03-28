@@ -10,7 +10,7 @@
 <body>
   <div id="container">
     <div id="header">
-      <h1><%= link_to "Padrino Admin", url(:base_index) %></h1>
+      <h1><%= link_to "Sushi Party Admin", url(:menus_index) %></h1>
       <div id="user-navigation">
         <ul class="wat-cf">
           <li><%= link_to pat(:profile), url(:accounts, :edit, :id => current_account.id) %></li>
@@ -33,12 +33,12 @@
         <%= yield %>
         <div id="footer">
           <div class="block">
-            <p>Copyright &copy; <%= Time.now.year %> Your Site - Powered by <a href="http://www.padrinorb.com" target="_blank">Padrino v.<%= Padrino.version %>.</a></p>
+            <p>Copyright &copy; <%= Time.now.year %> Sushi Party - Powered by <a href="http://www.padrinorb.com" target="_blank">Padrino v.<%= Padrino.version %>.</a></p>
           </div>
         </div>
       </div>
       <div id="sidebar">
-        <%= yield_content :sidebar %>
+        <%#= yield_content :sidebar %>
       </div>
     </div>
   </div>

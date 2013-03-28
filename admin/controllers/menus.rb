@@ -1,7 +1,7 @@
 Admin.controllers :menus do
 
   get :index do
-    @menus = Menu.all
+    @menus = Menu.includes(:menu_type).all
     render 'menus/index'
   end
 
