@@ -26,6 +26,7 @@ group :production do
   gem 'uglifier'
   gem 'therubyracer'
   gem 'rack-google-analytics'
+  gem 'pg'
 end
 
 gem 'will_paginate'
