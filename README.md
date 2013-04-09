@@ -15,3 +15,7 @@ sushi-party
 + git push heroku master
 
 + heroku run rake ar:setup
+
++ heroku config:set GOOGLE_STORAGE_KEY= GOOGLE_STORAGE_SECRET=
+
++ heroku restart
