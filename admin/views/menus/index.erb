@@ -15,19 +15,15 @@
           <th><%= mat(:menu, :image) %></th>
           <th><%= mat(:menu, :price) %></th>
           <th><%= mat(:menu, :menu_type_id) %></th>
-          <th><%= mat(:menu, :created_at) %></th>
-          <th><%= mat(:menu, :updated_at) %></th>
           <th class="last">&nbsp;</th>
         </tr>
         <% @menus.each do |menu| %>
         <tr>
           <td class="first"><%= menu.id %></td>
           <td><%= menu.name %></td>
-          <td><%= menu.image %></td>
-          <td><%= menu.price %></td>
+          <td><%= image_tag menu.image.thumb.to_s, :style => 'width:150px' %></td>
+          <td><%= menu.price %>€</td>
           <td><%= menu.menu_type.name %></td>
-          <td><%= menu.created_at %></td>
-          <td><%= menu.updated_at %></td>
           <td class="last">
             <%= button_to pat(:edit), url(:menus, :edit, :id => menu.id), :method => :get, :class => :button_to %> |
             <%= button_to pat(:delete), url(:menus, :destroy, :id => menu.id), :method => :delete, :class => :button_to, :onsubmit => "return confirm('#{pat(:confirm)}')" %>
@@ -36,9 +32,10 @@
         <% end %>
       </table>
       <div class="actions-bar wat-cf">
-        <div class="actions"></div>
+        <div class="actions"><%= will_paginate @menus %></div>
       </div>
     </div>
   </div>
 </div>
+
 <% content_for :sidebar, partial("base/sidebar") %>

@@ -6,6 +6,11 @@
   <%= f.label :name %><%= f.error_message_on :name %>
   <%= f.text_field :name, :class => :text_field %>
 </div>
+<% if !@menu.new_record? %>
+<div class="group">
+  <%= image_tag @menu.image.thumb.to_s %>
+</div>
+<% end %>
 <div class="group">
   <%= f.label :image %><%= f.error_message_on :image %>
   <%= f.file_field :image, :class => :long %>

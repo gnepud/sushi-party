@@ -1,7 +1,7 @@
 Admin.controllers :menus do
 
   get :index do
-    @menus = Menu.includes(:menu_type).all
+    @menus = Menu.includes(:menu_type).paginate(page: params[:page], per_page: 10)
     render 'menus/index'
   end
 
