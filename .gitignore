@@ -8,3 +8,4 @@ vendor/gems/*
 /db/*.db
 /public/system/*
 /public/assets/*
+.env

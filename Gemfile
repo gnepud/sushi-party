@@ -38,6 +38,7 @@ gem 'will_paginate'
 
 gem 'rmagick'
 gem 'carrierwave', :require => 'carrierwave'
+gem 'fog'
 
 # Or Padrino Edge
 # gem 'padrino', :git => 'git://github.com/padrino/padrino-framework.git'

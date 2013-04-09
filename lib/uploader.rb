@@ -10,17 +10,16 @@ class Uploader < CarrierWave::Uploader::Base
   ##
   # Storage type
   #
-  storage :file
-  # configure do |config|
-  #   config.fog_credentials = {
-  #     :provider              => 'XXX',
-  #     :aws_access_key_id     => 'YOUR_ACCESS_KEY',
-  #     :aws_secret_access_key => 'YOUR_SECRET_KEY'
-  #   }
-  #   config.fog_directory = 'YOUR_BUCKET'
-  # end
-  # storage :fog
-
+  #storage :file
+  configure do |config|
+    config.fog_credentials = {
+      :provider              => 'Google',
+      :google_storage_access_key_id     => ENV['GOOGLE_STORAGE_KEY'],
+      :google_storage_secret_access_key => ENV['GOOGLE_STORAGE_SECRET']
+    }
+    config.fog_directory = 'sushi-party'
+  end
+  storage :fog
 
 
   ## Manually set root
@@ -30,7 +29,7 @@ class Uploader < CarrierWave::Uploader::Base
   # Directory where uploaded files will be stored (default is /public/uploads)
   #
   def store_dir
-    "images/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    "images/#{model.class.to_s.underscore}/#{model.id}"
   end
 
   ##
