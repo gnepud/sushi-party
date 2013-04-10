@@ -17,7 +17,11 @@ class Uploader < CarrierWave::Uploader::Base
       :google_storage_access_key_id     => ENV['GOOGLE_STORAGE_KEY'],
       :google_storage_secret_access_key => ENV['GOOGLE_STORAGE_SECRET']
     }
-    config.fog_directory = 'sushi-party'
+    if PADRINO_ENV = 'development'
+      config.fog_directory = 'sushi-party-dev'
+    else
+      config.fog_directory = 'sushi-party'
+    end
   end
   storage :fog
 
