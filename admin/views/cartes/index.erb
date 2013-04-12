@@ -1,0 +1,36 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first active"><%= link_to pat(:list), url(:cartes, :index) %></li>
+      <li><%= link_to pat(:new), url(:cartes, :new) %></li>
+    </ul>
+  </div>
+  <div class="content">
+    <h2 class="title"><%= pat(:all) %> <% mt(:cartes) %></h2>
+    <div class="inner">
+      <table class="table">
+        <tr>
+          <th class="first"><%= mat(:carte, :id) %></th>
+          <th><%= mat(:carte, :name) %></th>
+          <th><%= mat(:carte, :image) %></th>
+          <th class="last">&nbsp;</th>
+        </tr>
+        <% @cartes.each do |carte| %>
+        <tr>
+          <td class="first"><%= carte.id %></td>
+          <td><%= carte.name %></td>
+          <td><%= image_tag carte.image.thumb.to_s, :style => 'width:150px' %></td>
+          <td class="last">
+            <%= button_to pat(:edit), url(:cartes, :edit, :id => carte.id), :method => :get, :class => :button_to %> |
+            <%= button_to pat(:delete), url(:cartes, :destroy, :id => carte.id), :method => :delete, :class => :button_to, :onsubmit => "return confirm('#{pat(:confirm)}')" %>
+          </td>
+        </tr>
+        <% end %>
+      </table>
+      <div class="actions-bar wat-cf">
+        <div class="actions"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<% content_for :sidebar, partial("base/sidebar") %>

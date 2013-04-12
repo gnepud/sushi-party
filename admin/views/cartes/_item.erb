@@ -1,0 +1,8 @@
+<div>
+  <%= f.label :name %><%= f.error_message_on :name %>
+  <%= f.text_field :name %>
+  <%= f.label :price %><%= f.error_message_on :price %>
+  <%= f.text_field :price %>
+  <%= f.hidden_field :_destroy %>
+  <%= link_to '[remove]', '#', class: 'remove_item' %>
+</div>

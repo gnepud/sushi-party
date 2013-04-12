@@ -1,0 +1,24 @@
+<div class="group">
+  <%= f.label :name %><%= f.error_message_on :name %>
+  <%= f.text_field :name, :class => :text_field %>
+</div>
+<% if !@carte.new_record? %>
+<div class="group">
+  <%= image_tag @carte.image.thumb.to_s %>
+</div>
+<% end %>
+<div class="group">
+  <%= f.label :image %><%= f.error_message_on :image %>
+  <%= f.file_field :image, :class => :long %>
+</div>
+<div class="items group">
+  <%= f.fields_for :items do |item_builder| %>
+    <%= render 'item', f: item_builder %>
+  <% end %>
+  <%= link_to_add_choices "", f, :items %>
+</div>
+
+<div class="group navform wat-cf">
+  <%= f.submit pat(:save), :class => :button %>
+  <%= f.submit pat(:cancel), :onclick => "window.location='#{url(:cartes, :index)}';return false", :class => :button %>
+</div>
