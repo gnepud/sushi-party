@@ -96,3 +96,21 @@ body {
   text-align: center;
   font-size: 1.2em;
 }
+
+.row.carte {
+  margin-bottom: 20px;
+  .carte-title {
+    text-align: left;
+    color: #8b8b8b;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+  }
+
+  .item {
+    color: #b1b1b1;
+
+    .price {
+      text-align: right;
+    }
+  }
+}

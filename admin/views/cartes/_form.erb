@@ -12,10 +12,8 @@
   <%= f.file_field :image, :class => :long %>
 </div>
 <div class="items group">
-  <%= f.fields_for :items do |item_builder| %>
-    <%= render 'item', f: item_builder %>
-  <% end %>
-  <%= link_to_add_choices "", f, :items %>
+  <%= f.label :items %><%= f.error_message_on :items %>
+  <%= text_area_tag 'carte[items]', :class => :text_area, :rows => 15, :value => @carte.items.map {|i| "#{i.name}|#{i.price}"}.join("\n") %>
 </div>
 
 <div class="group navform wat-cf">

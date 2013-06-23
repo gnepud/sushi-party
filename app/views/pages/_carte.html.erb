@@ -1,0 +1,22 @@
+<div class="large-4 small-4 columns">
+  <%= image_tag carte.image.thumb.to_s %>
+</div>
+<div class="large-8 small-8 columns">
+  <div class="carte-title"><%= carte.name %></div>
+  <div class="row">
+    <% carte.items.each_slice(2) do |a, b| %>
+      <div class="large-6 columns">
+        <div class="row item">
+          <div class="large-9 columns"><%= (a and a.name.present?) ? a.name : '' %></div>
+          <div class="large-3 columns price"><%= (a and a.price.present?) ? "#{a.price}€" : '' %></div>
+        </div>
+      </div>
+      <div class="large-6 columns">
+        <div class="row item">
+          <div class="large-9 columns"><%= (b and b.name.present?) ? b.name : '' %></div>
+          <div class="large-3 columns price"><%= (b and b.price.present?) ? "#{b.price}€" : '' %></div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

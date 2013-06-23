@@ -1,0 +1,11 @@
+<div class="large-12 columns">
+<% @cartes.each do |c| %>
+    <div class="row carte">
+
+      <%= partial 'pages/carte', :locals => { :carte => c } %>
+
+    </div>
+<% end %>
+</div>
+
+<div class="small-4 push-8 columns"><%= will_paginate @cartes %></div>

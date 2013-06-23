@@ -3,6 +3,7 @@ class Menu < ActiveRecord::Base
 
   mount_uploader :image, Uploader
 
+  validates :name, :price, presence: true
   # limit 2mo
   validates :image, presence: true, file_size: { maximum: 2097152 }
 

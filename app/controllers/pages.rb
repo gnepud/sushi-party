@@ -14,6 +14,7 @@ SushiParty.controllers :pages do
   end
 
   get :plateaux, :map => '/plateaux' do
+    @cartes = Carte.paginate(page: params[:page], per_page: 3)
     render 'pages/plateaux'
   end
 
