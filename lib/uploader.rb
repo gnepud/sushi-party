@@ -14,8 +14,8 @@ class Uploader < CarrierWave::Uploader::Base
   configure do |config|
     config.fog_credentials = {
       :provider              => 'Google',
-      :google_storage_access_key_id     => 'GOOG35ANCOJQ53EAYZIK',
-      :google_storage_secret_access_key => 'Jbxpr0QiMIhUTbxa8MJoq2tm6JFhF5boB8R0Z8nW'
+      :google_storage_access_key_id     => ENV['GOOGLE_STORAGE_KEY'],
+      :google_storage_secret_access_key => ENV['GOOGLE_STORAGE_SECRET']
     }
     if PADRINO_ENV = 'development'
       config.fog_directory = 'sushi-party-dev'
