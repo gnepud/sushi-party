@@ -48,6 +48,7 @@ GEM
     net-scp (1.1.0)
       net-ssh (>= 2.6.5)
     net-ssh (2.6.6)
+    newrelic_rpm (3.6.8.164)
     nokogiri (1.5.9)
     padrino (0.10.7)
       padrino-admin (= 0.10.7)
@@ -128,6 +129,7 @@ DEPENDENCIES
   carrierwave
   erubis (~> 2.7.0)
   fog
+  newrelic_rpm
   padrino (= 0.10.7)
   padrino-assets
   pg

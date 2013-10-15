@@ -32,6 +32,7 @@ group :production do
   gem 'therubyracer'
   gem 'rack-google-analytics'
   gem 'pg'
+  gem 'newrelic_rpm'
 end
 
 gem 'will_paginate'
