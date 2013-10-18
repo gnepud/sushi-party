@@ -56,7 +56,7 @@ class SushiParty < Padrino::Application
     # For padrino assets
     set :css_compressor => CssCompressor.new
     set :js_compressor => Uglifier.new
-    use Rack::GoogleAnalytics, :tracker => '<%= ENV["GOOGLE_ANALYTICS"] %>'
+    use Rack::GoogleAnalytics, :tracker => <%= ENV["GOOGLE_ANALYTICS"] %>
   end
 
   def self.email_to
